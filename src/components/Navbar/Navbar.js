@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { RiDashboard3Line } from 'react-icons/ri';
 
 const Navbar = () => {
     return (
@@ -12,7 +12,7 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-4 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to="/" class="btn btn-ghost normal-case text-lg">Home</Link>
-                        <Link to="/" class="btn btn-ghost normal-case text-lg">Dashboard</Link>
+                        <Link to="/" class="btn btn-ghost normal-case text-lg">Dashboard <RiDashboard3Line size={50}/></Link>
                     </ul>
                 </div>
                 <Link to="/" class="btn btn-ghost normal-case text-xl">SytiqHub</Link>
