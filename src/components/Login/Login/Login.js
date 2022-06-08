@@ -19,7 +19,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs mb-4">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -28,11 +28,11 @@ const Login = () => {
                                 placeholder="Password"
                                 className="input input-bordered w-full max-w-xs"
                             />
-                            <Link to="/forgetpass" className='mt-1 text-secondary text-center hover:underline text-xl mb-3'><small className='cursor-pointer'>Forget Passoword?</small></Link>
+                            {/* <Link to="/forgetpass" className='mt-1 text-secondary text-center hover:underline text-xl mb-3'><small className='cursor-pointer'>Forget Passoword?</small></Link> */}
                         </div>
                         <input className="btn w-full btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary" type="submit" value="Login" />
                     </form>
-                    <p className='text-center'><small>New to SyntiqHub Portal? <Link to={"/signup"} className="text-secondary">Create New Account</Link></small></p>
+                    <p className='text-center'><small>New to SyntiqHub Portal? <Link to={"/register"} className="text-secondary">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         // onClick={() => signInWithGoogle()}
