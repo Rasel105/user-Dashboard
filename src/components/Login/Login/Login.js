@@ -1,20 +1,22 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    
+
+    const { register, handleSubmit } = useForm();
+
     const onSubmit = async data => {
-     
         toast("Wow so easy!");
-        console.log(data)
+        console.log(data);
     };
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl mt-10">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
-                    <form >
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs mb-3">
                             <input
                                 type="email"
