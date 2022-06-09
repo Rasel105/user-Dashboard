@@ -1,21 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import Loader from '../../Shared/Loader';
+import auth from '../../../firebase.init';
+
 
 const Register = () => {
+    const { register, handleSubmit } = useForm();
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword();
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-    const { register, handleSubmit } = useForm();
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const navigate = useNavigate();
+
+    if (user || googleUser) {
+        navigate('/');
+    }
+
+    if (loading || googleLoading) {
+        <Loader />
+    }
+
+
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword();
-        console.log(data);
+        await createUserWithEmailAndPassword(data.email, data.password);
+        toast("Wow so easy!");
+        console.log(data)
     };
+
 
     return (
         <div className='flex h-screen justify-center items-center pt-10'>
@@ -61,7 +80,7 @@ const Register = () => {
                     <p className='text-center'><small>Already have SyntiqHub Portal? <Link to={"/login"} className="text-secondary">Login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
-                        // onClick={() => signInWithGoogle()}
+                        onClick={() => signInWithGoogle()}
                         className="btn btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary"
                     >Continue with Google</button>
                 </div>
