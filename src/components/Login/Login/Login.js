@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    
+    const onSubmit = async data => {
+     
+        toast("Wow so easy!");
+        console.log(data)
+    };
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl mt-10">
@@ -13,6 +20,7 @@ const Login = () => {
                                 type="email"
                                 placeholder="Your email"
                                 className="input input-bordered w-full max-w-xs"
+                                {...register("email", { required: true })}
                             />
                         </div>
 
@@ -21,8 +29,8 @@ const Login = () => {
                                 type="password"
                                 placeholder="Password"
                                 className="input input-bordered w-full max-w-xs"
+                                {...register("password", { required: true })}
                             />
-
                         </div>
 
                         <input className="btn w-full btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary" type="submit" value="Login" />
