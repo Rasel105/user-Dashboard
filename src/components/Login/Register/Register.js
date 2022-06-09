@@ -1,27 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const Register = () => {
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword();
+
     return (
-        <div className='flex h-screen justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl mt-14">
+        <div className='flex h-screen justify-center items-center pt-10'>
+            <div className="card w-96 bg-base-100 shadow-2xl mt-14">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Register</h2>
                     <form >
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
+                        <div className="form-control w-full max-w-xs mb-3">
                             <input
                                 type="text"
                                 placeholder="Your name"
                                 className="input input-bordered w-full max-w-xs"
                             />
                         </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
+                        <div className="form-control w-full max-w-xs mb-3">
                             <input
                                 type="email"
                                 placeholder="Your email"
@@ -29,13 +32,17 @@ const Register = () => {
                             />
                         </div>
 
-                        <div className="form-control w-full max-w-xs mb-4">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
+                        <div className="form-control w-full max-w-xs mb-3">
                             <input
                                 type="password"
                                 placeholder="Password"
+                                className="input input-bordered w-full max-w-xs"
+                            />
+                        </div>
+                        <div className="form-control w-full max-w-xs mb-3">
+                            <input
+                                type="password"
+                                placeholder="Confirm Password"
                                 className="input input-bordered w-full max-w-xs"
                             />
                         </div>
