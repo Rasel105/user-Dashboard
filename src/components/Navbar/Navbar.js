@@ -26,7 +26,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                <Link to="/register" class="btn mr-2 btn-primary text-white">Register <GiArchiveRegister className='ml-1' size={25}/></Link>
+                <Link to="/register" class="btn mr-2 btn-primary text-white">Register <GiArchiveRegister className='ml-1' size={25} /></Link>
                 <Link to="/login" class="btn btn-primary text-white">Login <TbLogin className='ml-1' size={25} /></Link>
             </div>
         </div>
