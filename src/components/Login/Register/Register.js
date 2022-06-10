@@ -14,24 +14,31 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        createUserError
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
+    let signInError;
+
+    if (loading || googleLoading || updating) {
+        <Loader />
+    }
+
     if (user || googleUser) {
         navigate('/');
     }
 
-    if (loading || googleLoading) {
-        <Loader />
+    if (googleError || createUserError || updateError) {
+        signInError = <p className='text-red-500'><small>{googleError?.message || createUserError?.message} || {updateError?.message}</small></p>
     }
 
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
-        toast("Wow so easy!");
+        await updateProfile({ displayName: data.name });
+        toast("Register successfull");
         console.log(data)
     };
 
@@ -75,6 +82,7 @@ const Register = () => {
                                 {...register("confirmpass", { required: true })}
                             />
                         </div>
+                        {signInError}
                         <input className="btn w-full btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary" type="submit" value="Register" />
                     </form>
                     <p className='text-center'><small>Already have SyntiqHub Portal? <Link to={"/login"} className="text-secondary">Login</Link></small></p>

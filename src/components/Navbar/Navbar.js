@@ -33,7 +33,7 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-4 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to="/" class="btn btn-ghost normal-case text-lg mb-2"><VscHome size={35}></VscHome></Link>
-                        <Link to="/" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard size={35} /></Link>
+                        <Link to="/dashboard" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard size={35} /></Link>
                     </ul>
                 </div>
                 <Link to="/" class="btn btn-ghost normal-case text-xl">SytiqHub</Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <Link to="/" class="btn btn-ghost normal-case text-lg"><VscHome size={35}></VscHome></Link>
-                    <Link to="/" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard className='ml-2' size={35} /></Link>
+                    <Link to="/dashboard" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard className='ml-2' size={35} /></Link>
                 </ul>
             </div>
             <div class="navbar-end">
