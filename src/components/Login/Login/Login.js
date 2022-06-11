@@ -4,14 +4,27 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loader from '../../Shared/Loader';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+
     if (user) {
         navigate('/')
     }
+
+    if (loading) {
+        <Loader />
+    }
+
+    let logInError;
+
+    if (error) {
+        logInError = <p className='text-red-500'><small>{error?.message || error?.message}</small></p>
+    }
+
 
     const onSubmit = async data => {
         toast("Wow so easy!");
@@ -42,6 +55,7 @@ const Login = () => {
                         </div>
 
                         <input className="btn w-full btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary" type="submit" value="Login" />
+                        {logInError}
                     </form>
                     <Link to="/forgetpass" className='text-secondary text-center hover:underline text-xl'><small className='cursor-pointer'>Forget Passoword?</small></Link>
                     <p className='text-center'><small>New to SyntiqHub Portal? <Link to={"/register"} className="text-secondary">Create New Account</Link></small></p>
