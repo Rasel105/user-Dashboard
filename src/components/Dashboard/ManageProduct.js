@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const ManageProduct = () => {
 
-    const [items, setItems] = useState({});
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         (async () => {
@@ -17,7 +17,7 @@ const ManageProduct = () => {
 
     return (
         <div class="overflow-x-auto border px-5 py-24 rounded-lg shadow-lg">
-            <table class="table w-full">
+            <table class="table w-full sm:w-full">
                 <thead>
                     <tr>
                         <th>S/L</th>
@@ -30,7 +30,7 @@ const ManageProduct = () => {
                 </thead>
                 <tbody className='mt-2'>
                     {
-                        items.map(item => <ManageAllProduct item={item}></ManageAllProduct>)
+                        items?.map((item, index) => <ManageAllProduct item={item} index={index}></ManageAllProduct>)
                     }
                 </tbody>
             </table>

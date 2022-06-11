@@ -1,11 +1,17 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 
 const Login = () => {
-
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    if (user) {
+        navigate('/')
+    }
 
     const onSubmit = async data => {
         toast("Wow so easy!");
@@ -41,7 +47,7 @@ const Login = () => {
                     <p className='text-center'><small>New to SyntiqHub Portal? <Link to={"/register"} className="text-secondary">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
-                        // onClick={() => signInWithGoogle()}
+                        onClick={() => signInWithGoogle()}
                         className="btn btn-primary uppercase font-bold text-white bg-gradient-to-r from-secondary to-primary"
                     >Continue with Google</button>
                 </div>

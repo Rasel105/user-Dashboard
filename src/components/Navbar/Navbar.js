@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { VscDashboard, VscHome, VscSignOut } from "react-icons/vsc";
 import { TbLogin } from "react-icons/tb";
-import { GiArchiveRegister } from "react-icons/gi";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loader from '../Shared/Loader';
@@ -11,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const [user, loading] = useAuthState(auth);
-
+    const navigate = useNavigate();
     // loader 
     if (loading) {
         <Loader />
@@ -22,6 +21,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOut(auth);
         toast("Signout Successfully")
+        navigate("/login")
     };
 
     return (
@@ -41,17 +41,16 @@ const Navbar = () => {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <Link to="/" class="btn btn-ghost normal-case text-lg"><VscHome size={35}></VscHome></Link>
-                    <Link to="/dashboard" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard className='ml-2' size={35} /></Link>
+                    {user && <Link to="/dashboard" class="btn btn-ghost normal-case text-lg">Dashboard <VscDashboard className='ml-2' size={35} /></Link>}
                 </ul>
             </div>
             <div class="navbar-end">
 
                 {
-                    user ? <button onClick={handleSignOut} to="/login" class="btn btn-primary text-white">Signout <VscSignOut className='ml-1' size={25} /></button> : <> <Link to="/register" class="btn mr-2 btn-primary text-white">Register <GiArchiveRegister className='ml-1' size={25} /></Link>
-                        <Link to="/login" class="btn btn-primary text-white">Login <TbLogin className='ml-1' size={25} /></Link></>
+                    user ? <button onClick={handleSignOut} class="btn btn-primary text-white">Signout <TbLogin className='ml-1' size={25} /></button> : <Link to="/login" class="btn btn-primary text-white">Login <TbLogin className='ml-1' size={25} /></Link>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 

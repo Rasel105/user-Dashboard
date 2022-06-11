@@ -3,7 +3,7 @@ import Item from './Item';
 const axios = require('axios');
 
 const Home = () => {
-    const [items, setItems] = useState({});
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         (async () => {
