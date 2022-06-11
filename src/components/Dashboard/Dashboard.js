@@ -32,8 +32,8 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         <>
-                            <li className='mb-3 text-lg'><Link to='/dashboard'>Add IOT Item</Link></li>
-                            <li className='mb-3 text-lg'><Link to='/dashboard/all-products'>Manage IOT Items</Link></li>
+                            <li className='mb-3 text-lg shadow-md rounded-md'><Link to='/dashboard/add-product'>Add IOT Item</Link></li>
+                            <li className='mb-3 text-lg shadow-md rounded-md'><Link to='/dashboard/manage-product'>Manage IOT Items</Link></li>
                         </>
                     </ul>
                 </div>
