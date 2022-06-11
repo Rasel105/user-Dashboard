@@ -8,7 +8,7 @@ const ManageAllProduct = ({ item, index, setReload }) => {
     const hanldeDelete = (id) => {
         const deleteConfirm = window.confirm("Are you sure want to delete the item?");
         if (deleteConfirm) {
-            fetch(`http://localhost:5000/item/${id}`, {
+            fetch(`https://evening-island-26002.herokuapp.com/item/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

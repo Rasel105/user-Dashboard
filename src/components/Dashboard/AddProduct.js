@@ -29,7 +29,7 @@ const AddProduct = () => {
                         description: data.description,
                         img: img
                     };
-                    fetch('http://localhost:5000/item', {
+                    fetch('https://evening-island-26002.herokuapp.com/item', {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

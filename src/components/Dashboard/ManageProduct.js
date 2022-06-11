@@ -8,7 +8,7 @@ const ManageProduct = () => {
     const [reload, setReload] = useState(false);
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get('http://localhost:5000/items');
+            const { data } = await axios.get('https://evening-island-26002.herokuapp.com/items');
             setItems(data);
         })();
     }, [reload]);
