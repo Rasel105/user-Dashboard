@@ -24,15 +24,15 @@ const ManageAllProduct = ({ item, index, setReload }) => {
         <Fade left>
             <tr>
                 <th>{index + 1}</th>
-                <td><div class="avatar">
-                    <div class="w-24 rounded-full">
+                <td><div className="avatar">
+                    <div className="w-24 rounded-full">
                         <img src={img} alt="" />
                     </div>
                 </div></td>
                 <td>{name}</td>
                 <td>{price}</td>
                 <td>{quantity}</td>
-                <td><button onClick={() => hanldeDelete(_id)} class="btn btn-sm btn-error text-white">Delete</button></td>
+                <td><button onClick={() => hanldeDelete(_id)} className="btn btn-sm btn-error text-white">Delete</button></td>
             </tr>
         </Fade>
     );

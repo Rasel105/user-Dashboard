@@ -13,11 +13,9 @@ const ManageProduct = () => {
         })();
     }, [reload]);
 
-    console.log(items);
-
     return (
-        <div class="overflow-x-auto border px-5 py-24 rounded-lg shadow-lg">
-            <table class="table w-full sm:w-full">
+        <div className="overflow-x-auto border px-5 py-24 rounded-lg shadow-lg">
+            <table className="table w-full sm:w-full">
                 <thead>
                     <tr>
                         <th>S/L</th>
@@ -30,7 +28,11 @@ const ManageProduct = () => {
                 </thead>
                 <tbody className='mt-2'>
                     {
-                        items?.map((item, index) => <ManageAllProduct setReload={setReload} item={item} index={index}></ManageAllProduct>)
+                        items?.map((item, index) => <ManageAllProduct
+                            key={item._id}
+                            setReload={setReload}
+                            item={item} index={index}
+                        ></ManageAllProduct>)
                     }
                 </tbody>
             </table>

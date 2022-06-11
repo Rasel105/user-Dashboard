@@ -8,7 +8,7 @@ import Loader from '../Shared/Loader';
 const Dashboard = () => {
     const { pathname } = useLocation();
     const [user, loading] = useAuthState(auth);
-    console.log(user);
+    
     if (loading) {
         <Loader />
     }

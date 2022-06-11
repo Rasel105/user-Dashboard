@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 const Item = ({ item }) => {
     const { _id, name, img, description, quantity, price } = item;
-    console.log(item)
+
     return (
         <Fade left>
             <div className="bg-base-100 shadow-lg border rounded-lg">
