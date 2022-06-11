@@ -1,8 +1,23 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const ManageAllProduct = ({ item, index }) => {
+const ManageAllProduct = ({ item, index, setReload }) => {
 
-    const { price, img, quantity, name } = item;
+    const { _id, price, img, quantity, name } = item;
+
+    const hanldeDelete = (id) => {
+        const deleteConfirm = window.confirm("Are you sure want to delete the item?");
+        if (deleteConfirm) {
+            fetch(`http://localhost:5000/item/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(res => {
+                    setReload(true);
+                    toast.success("Item Deleted");
+                })
+        }
+    }
 
     return (
         <tr>
@@ -15,7 +30,7 @@ const ManageAllProduct = ({ item, index }) => {
             <td>{name}</td>
             <td>{price}</td>
             <td>{quantity}</td>
-            <td><button class="btn btn-sm btn-error text-white">Delete</button></td>
+            <td><button onClick={() => hanldeDelete(_id)} class="btn btn-sm btn-error text-white">Delete</button></td>
         </tr>
     );
 };

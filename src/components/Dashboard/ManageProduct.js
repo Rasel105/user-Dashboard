@@ -5,13 +5,13 @@ const axios = require('axios');
 const ManageProduct = () => {
 
     const [items, setItems] = useState([]);
-
+    const [reload, setReload] = useState(false);
     useEffect(() => {
         (async () => {
             const { data } = await axios.get('http://localhost:5000/items');
             setItems(data);
         })();
-    }, []);
+    }, [reload]);
 
     console.log(items);
 
@@ -30,7 +30,7 @@ const ManageProduct = () => {
                 </thead>
                 <tbody className='mt-2'>
                     {
-                        items?.map((item, index) => <ManageAllProduct item={item} index={index}></ManageAllProduct>)
+                        items?.map((item, index) => <ManageAllProduct setReload={setReload} item={item} index={index}></ManageAllProduct>)
                     }
                 </tbody>
             </table>
