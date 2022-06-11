@@ -15,7 +15,7 @@ const Dashboard = () => {
     return (
         <div className='px-4 mb-[-20px]'>
             <div className="drawer drawer-mobile">
-                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col px-4">
                     {/* <!-- Page content here --> */}
                     <Outlet />
@@ -29,7 +29,7 @@ const Dashboard = () => {
                     }
                 </div>
                 <div className="drawer-side border border-gray-200 rounded-lg shadow-lg pt-20">
-                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                    <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         <>
                             <li className='mb-3 text-lg shadow-md rounded-md'><Link to='/dashboard/add-product'>Add IOT Item</Link></li>

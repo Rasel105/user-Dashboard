@@ -49,6 +49,9 @@ const Navbar = () => {
                 {
                     user ? <button onClick={handleSignOut} class="btn btn-primary text-white">Signout <TbLogin className='ml-1' size={25} /></button> : <Link to="/login" class="btn btn-primary text-white">Login <TbLogin className='ml-1' size={25} /></Link>
                 }
+                <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
             </div>
         </div >
     );
