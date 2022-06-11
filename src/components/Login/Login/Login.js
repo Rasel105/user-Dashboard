@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -8,28 +8,35 @@ import Loader from '../../Shared/Loader';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [
+        signInWithEmailAndPassword,
+        signUser,
+        signLoading,
+        signError,
+    ] = useSignInWithEmailAndPassword(auth);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
 
-    if (user) {
+    if (user || signUser) {
         navigate('/')
     }
 
-    if (loading) {
+    if (loading || signLoading) {
         <Loader />
     }
 
     let logInError;
 
-    if (error) {
+    if (error || signError) {
         logInError = <p className='text-red-500'><small>{error?.message || error?.message}</small></p>
     }
 
 
     const onSubmit = async data => {
-        toast("Wow so easy!");
+        await signInWithEmailAndPassword(data.email, data.password)
         console.log(data);
     };
+
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl mt-10">

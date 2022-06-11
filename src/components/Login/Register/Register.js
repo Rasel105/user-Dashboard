@@ -22,12 +22,12 @@ const Register = () => {
 
     let signInError;
 
-    if (loading || googleLoading || updating) {
-        <Loader />
-    }
-
     if (user || googleUser) {
         navigate('/');
+    }
+
+    if (loading || googleLoading || updating) {
+        <Loader />
     }
 
     if (googleError || createUserError || updateError) {
@@ -38,7 +38,7 @@ const Register = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        toast("Register successfull");
+        toast("Login successfull");
         console.log(data)
     };
 
