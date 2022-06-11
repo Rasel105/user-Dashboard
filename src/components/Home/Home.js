@@ -14,7 +14,7 @@ const Home = () => {
 
     return (
         <div className='container mx-auto px-4 pt-32'>
-            <h1 className='text-center text-3xl font-bold my-10 uppercase'>Latest All Products</h1>
+            <h1 className='text-center text-3xl font-bold my-5 uppercase'>Latest All Products</h1>
 
             {items.length > 0 &&
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>

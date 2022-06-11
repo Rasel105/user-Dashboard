@@ -1,30 +1,30 @@
-[
-    {
-        "name": "Dell Inspiron",
-        "img": "https://i.ibb.co/58q8fVW/dell-2.png",
-        "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
-        "price ": "580",
-        "quantity": "890"
-    },
-    {
-        "name": "Dell Inspiron",
-        "img": "https://i.ibb.co/58q8fVW/dell-2.png",
-        "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
-        "price ": "580",
-        "quantity": "890"
-    },
-    {
-        "name": "Dell Inspiron",
-        "img": "https://i.ibb.co/58q8fVW/dell-2.png",
-        "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
-        "price ": "580",
-        "quantity": "890"
-    },
-    {
-        "name": "Dell Inspiron",
-        "img": "https://i.ibb.co/58q8fVW/dell-2.png",
-        "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
-        "price ": "580",
-        "quantity": "890"
-    }
-]
+    [
+        {
+            "name": "Dell Inspiron",
+            "img": "https://i.ibb.co/58q8fVW/dell-2.png",
+            "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
+            "price": "580",
+            "quantity": "890"
+        },
+        {
+            "name": "Dell Inspiron",
+            "img": "https://i.ibb.co/58q8fVW/dell-2.png",
+            "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
+            "price": "580",
+            "quantity": "890"
+        },
+        {
+            "name": "Dell Inspiron",
+            "img": "https://i.ibb.co/58q8fVW/dell-2.png",
+            "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
+            "price": "580",
+            "quantity": "890"
+        },
+        {
+            "name": "Dell Inspiron",
+            "img": "https://i.ibb.co/58q8fVW/dell-2.png",
+            "description": "2018 Dell Inspiron 15 15.6 Inch Flagship Notebook Laptop Computer (Intel Core i5-7200U 2.5GHz, 8GB DDR4 RAM, 256GB SSD, MaxxAudio Sound, Intel HD Graphics 620, HD Webcam, Windows 10)",
+            "price": "580",
+            "quantity": "890"
+        }
+    ]

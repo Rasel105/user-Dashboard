@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ManageAllProduct from './ManageAllProduct';
+const axios = require('axios');
 
 const ManageProduct = () => {
+
+    const [items, setItems] = useState({});
+
+    useEffect(() => {
+        (async () => {
+            const { data } = await axios.get('http://localhost:5000/items');
+            setItems(data);
+        })();
+    }, []);
+
+    console.log(items);
+
     return (
         <div class="overflow-x-auto border px-5 py-24 rounded-lg shadow-lg">
             <table class="table w-full">
@@ -15,14 +29,9 @@ const ManageProduct = () => {
                     </tr>
                 </thead>
                 <tbody className='mt-2'>
-                    <tr>
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Blue</td>
-                        <td><button class="btn btn-sm btn-error text-white">Small</button></td>
-                    </tr>
+                    {
+                        items.map(item => <ManageAllProduct item={item}></ManageAllProduct>)
+                    }
                 </tbody>
             </table>
         </div>

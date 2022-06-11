@@ -53,7 +53,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className='border px-5 py-24 rounded-lg shadow-lg'>
+        <div className='border px-5 py-16 rounded-lg shadow-lg'>
             <h2 className='text-2xl font-semibold font-secondary mb-5'>Add Item Here</h2>
             <form onSubmit={handleSubmit(handleAddProduct)}>
 
